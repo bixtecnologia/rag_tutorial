@@ -1,0 +1,32 @@
+
+Alternar o índice
+Modelos de linguagem de grande escala
+
+Artigo
+Discussão
+Ler
+Editar
+Ver histórico
+
+Ferramentas
+Esta página cita fontes, mas não cobrem todo o conteúdo
+Esta página cita fontes, mas que não cobrem todo o conteúdo. Ajude a inserir referências (Encontre fontes: ABW  • CAPES  • Google (N • L • A)). (Março de 2023)
+Modelos de linguagem de grande escala (em inglês: Large Language Model ou LLM)[1][2] são modelos de linguagem compostos por uma rede neural com muitos parâmetros (tipicamente bilhões ou possivelmente mais[3]). São treinados com grandes quantidades de textos não rotulado usando aprendizado de máquina não-supervisionado.[4][5] Os LLM surgiram por volta de 2018,[6] com o modelo BERT.[6] Estes têm bom desempenho em uma ampla variedade de tarefas. Isso mudou o foco da pesquisa em processamento de linguagem natural, afastando-se do paradigma anterior de treinar modelos supervisionados especializados para tarefas específicas.
+
+Propriedades
+Embora o termo não tenha uma definição formal, ele geralmente se refere a modelos de aprendizado profundo que possuem uma contagem de parâmetros da ordem de bilhões ou mais.[7] MLLs são modelos de propósito geral que se destacam em uma ampla gama de tarefas, em vez de serem treinados para uma tarefa específica (como análise de sentimento, reconhecimento de entidades nomeadas ou raciocínio matemático). Embora treinados em tarefas simples, como prever a próxima palavra em uma frase, modelos de linguagem neural com treinamento e contagem de parâmetros suficientes são capazes de capturar grande parte da sintaxe e semântica da linguagem humana. Além disso, grandes modelos de linguagem demonstram considerável conhecimento geral sobre o mundo e são capazes de "memorizar" uma grande quantidade de fatos durante o treinamento.
+
+Arquitetura e treinamento
+Os modelos grandes de linguagem geralmente usam a arquitetura do transformador, que se tornou a técnica padrão de aprendizado profundo para dados sequenciais desde 2018 (anteriormente, arquiteturas recorrentes como a LSTM eram mais comuns). Os MLLs são treinados de maneira não supervisionada em texto não anotado. Um transformador da esquerda para a direita é treinado para maximizar a probabilidade atribuída à próxima palavra nos dados de treinamento, dada o contexto anterior. Alternativamente, um MLL pode usar um transformador bidirecional (como no exemplo do BERT), que atribui uma distribuição de probabilidade sobre as palavras com acesso tanto ao contexto anterior quanto posterior. Além da tarefa de prever a próxima palavra ou "preencher as lacunas", os MLLs podem ser treinados em tarefas auxiliares que testam sua compreensão da distribuição de dados, como a Predição de Próxima Sentença (NSP), na qual pares de frases são apresentados e o modelo deve prever se eles aparecem lado a lado no corpus de treinamento.
+
+Os primeiros MLLs foram treinados em corpora com bilhões de palavras. A versão inicial do GPT foi treinada em 2018 no BookCorpus, que consiste em 985 milhões de palavras. No mesmo ano, o BERT foi treinado em uma combinação de BookCorpus e Wikipedia em inglês, totalizando 3,3 bilhões de palavras. Nos anos seguintes, os corpora de treinamento para MLLs aumentaram em ordens de magnitude, atingindo centenas de bilhões ou trilhões de tokens.
+
+MLLs são caros em termos computacionais para serem treinados. Um estudo de 2020 estimou o custo do treinamento de um modelo com 1.5 bilhão de parâmetros (de 1 a 2 ordens de magnitude menores que o estado da arte na época) em US$ 1.6 milhão.
+
+Uma análise de 2020 constatou que a capacidade dos modelos de linguagem neural (medida pela perda de treinamento) aumentou suavemente em uma relação de lei de potência com o número de parâmetros, quantidade de dados de treinamento e computação usada para treinamento. Essas relações foram testadas em uma ampla gama de valores (até sete ordens de magnitude) e nenhuma atenuação da relação foi observada no extremo superior da faixa (incluindo tamanhos de rede de até trilhões de parâmetros).
+
+Aplicação em tarefas secundárias
+Entre 2018 e 2020, o método padrão para utilizar um MLL em uma tarefa específica de processamento de linguagem natural era ajustar o modelo com treinamento adicional específico para a tarefa. Posteriormente, descobriu-se que MLLs mais poderosos, como o GPT-3, podem resolver tarefas sem treinamento adicional por meio de técnicas de "prompting", nas quais o problema a ser resolvido é apresentado ao modelo como um prompt de texto, possivelmente com alguns exemplos textuais de problemas semelhantes e suas soluções.
+
+Ajuste fino
+O ajuste fino é a prática de modificar um modelo de linguagem pré-treinado existente, treinando-o (de forma supervisionada) em uma tarefa específica (por exemplo, análise de sentimento, reconhecimento de entidade nomeada ou marcação de partes do discurso). É uma forma de aprendizado por transferência. Geralmente envolve a introdução de um novo conjunto de pesos conectando a camada final do modelo de linguagem à saída da tarefa secundária. Os pesos originais do modelo de linguagem podem ser "congelados", de modo que apenas a nova camada de pesos conectando-os à saída seja aprendida durante o treinamento. Alternativamente, os pesos originais podem receber pequenas atualizações (possivelmente com camadas anteriores congeladas).

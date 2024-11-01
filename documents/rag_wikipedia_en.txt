@@ -1,0 +1,19 @@
+From Wikipedia, the free encyclopedia
+Retrieval augmented generation (RAG) is a technique that grants generative artificial intelligence models information retrieval capabilities. It modifies interactions with a large language model (LLM) so that the model responds to user queries with reference to a specified set of documents, using this information to augment information drawn from its own vast, static training data. This allows LLMs to use domain-specific and/or updated information.[1] Use cases include providing chatbot access to internal company data, or giving factual information only from an authoritative source.[2]
+
+Process
+The RAG process is made up of four key stages. First, all the data must be prepared and indexed for use by the LLM. Thereafter, each query consists of a retrieval, augmentation and a generation phase.[1]
+
+Indexing
+The data to be referenced must first be converted into LLM embeddings, numerical representations in the form of large vectors. RAG can be used on unstructured (usually text), semi-structured, or structured data (for example knowledge graphs).[1] These embeddings are then stored in a vector database to allow for document retrieval.
+
+
+Overview of RAG process, combining external documents and user input into an LLM prompt to get tailored output
+Retrieval
+Given a user query, a document retriever is first called to select the most relevant documents which will be used to augment the query.[3] This comparison can be done using a variety of methods, which depend in part on the type of indexing used.[1]
+
+Augmentation
+The model feeds this relevant retrieved information into the LLM via prompt engineering of the user's original query.[2] Newer implementations (as of 2023) can also incorporate specific augmentation modules with abilities such as expanding queries into multiple domains, and using memory and self-improvement to learn from previous retrievals.[1]
+
+Generation
+Finally, the LLM can generate output based on both the query and the retrieved documents.[4] Some models incorporate extra steps to improve output such as the re-ranking of retrieved information, context selection and fine tuning.[1]
