@@ -1,4 +1,4 @@
-# RAG (Retrieval Augmented Generation) System
+# RAG (Retrieval Augmented Generation) System 
 
 ## Video Tutorial (Portuguese)
 This repository is part of Bix Tech "Semana de Dados" a.k.a Data Week. For a further explanation aboutwhat is RAG and this tutorial, watch the video below:
